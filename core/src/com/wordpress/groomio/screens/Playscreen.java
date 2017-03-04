@@ -26,7 +26,7 @@ public class Playscreen extends AbstractScreen {
 
     private void init() {
         //TODO
-        logo = new Texture("logo2.png");
+        logo = new Texture("logo.png");
     }
 
     @Override
