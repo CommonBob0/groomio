@@ -3,18 +3,21 @@ package com.wordpress.groomio;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-import com.wordpress.groomio.screens.Playscreen;
+//import com.wordpress.groomio.screens.Playscreen;
+import com.wordpress.groomio.screens.*;
 
 public class Groomio extends Game {
-	public SpriteBatch batch;
+
+	public final static String GAME_NAME = "Groomio";
 	public final static int WIDTH = 800;
 	public final static int HEIGHT = 480;
-	
+
+	private boolean paused;
+
 	@Override
 	public void create () {
-		batch = new SpriteBatch();
-		setScreen(new Playscreen(this));
-
+		//batch = new SpriteBatch();
+		this.setScreen(new LogoScreen(this));
 	}
 
 	@Override
@@ -25,5 +28,15 @@ public class Groomio extends Game {
 	@Override
 	public void dispose () {
 
+	}
+
+	// Getters and Setters //
+
+	public boolean isPaused() {
+		return paused;
+	}
+
+	public void setPaused(boolean paused) {
+		this.paused = paused;
 	}
 }

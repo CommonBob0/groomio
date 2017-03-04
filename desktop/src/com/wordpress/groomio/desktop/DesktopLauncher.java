@@ -7,6 +7,9 @@ import com.wordpress.groomio.Groomio;
 public class DesktopLauncher {
 	public static void main (String[] arg) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
+		config.width = Groomio.WIDTH;
+		config.height = Groomio.HEIGHT;
+		config.resizable = true;
 		new LwjglApplication(new Groomio(), config);
 	}
 }
