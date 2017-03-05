@@ -1,5 +1,7 @@
 package com.wordpress.groomio.screens;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.wordpress.groomio.Groomio;
@@ -15,12 +17,12 @@ public class Main_menu extends AbstractScreen {
 
     public Main_menu(final Groomio game){
         super(game);
-        init();
     }
 
-    private void init(){
-        button = new Texture("button.png");
-        //background = new Texture("");
+    @Override
+    protected void init(){
+        button = assets.manager.get("button2.png", Texture.class);
+        background = assets.manager.get("menu_background.png", Texture.class);
     }
 
     @Override
@@ -28,8 +30,10 @@ public class Main_menu extends AbstractScreen {
         super.render(delta);
 
         batch.begin();
+        batch.draw(background, 0, 0);
         batch.draw(button, Groomio.WIDTH/2 - button.getWidth()/2,
-                    Groomio.HEIGHT/2 - button.getHeight()/2);
+                    Groomio.HEIGHT - button.getHeight()*2);
+
         // TODO
         batch.end();
     }

@@ -12,13 +12,13 @@ public class LogoScreen extends AbstractScreen {
     private Texture logo;
 
     public LogoScreen(final Groomio game){
-        super(game);
-        init();
+        super(game);;
 
         Timer.schedule(new Timer.Task() {
 
             @Override
             public void run() {
+              if(assetsFinished)
                 game.setScreen(new Main_menu(game));
             }
         }, 2);
@@ -26,7 +26,8 @@ public class LogoScreen extends AbstractScreen {
 
     }
 
-    private void init() {
+    @Override
+    protected void init() {
         //TODO
         logo = new Texture("logo2.png");
     }

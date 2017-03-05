@@ -4,6 +4,7 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 //import com.wordpress.groomio.screens.Playscreen;
+import com.wordpress.groomio.assets.Assets;
 import com.wordpress.groomio.screens.*;
 
 public class Groomio extends Game {
@@ -17,11 +18,14 @@ public class Groomio extends Game {
 	@Override
 	public void create () {
 		//batch = new SpriteBatch();
+		//assets = new Assets();
 		this.setScreen(new LogoScreen(this));
+
 	}
 
 	@Override
 	public void render () {
+
 		super.render();
 	}
 	
@@ -33,10 +37,12 @@ public class Groomio extends Game {
 	// Getters and Setters //
 
 	public boolean isPaused() {
+
 		return paused;
 	}
 
 	public void setPaused(boolean paused) {
+
 		this.paused = paused;
 	}
 }

@@ -10,12 +10,13 @@ import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.wordpress.groomio.Groomio;
+import com.wordpress.groomio.assets.Assets;
 
 /**
  * Created by Commonbob on 04.03.2017.
  */
 
-public class AbstractScreen implements Screen {
+public abstract class AbstractScreen implements Screen {
 
     protected Groomio game;
 
@@ -23,14 +24,23 @@ public class AbstractScreen implements Screen {
     private OrthographicCamera camera;
 
     protected SpriteBatch batch;
+    protected Assets assets;
+    protected boolean assetsFinished = false;
 
     public AbstractScreen(Groomio game){
         this.game = game;
         createCamera();
         stage = new Stage(new StretchViewport(Groomio.WIDTH, Groomio.HEIGHT, camera));
         batch = new SpriteBatch();
+        assets = new Assets();
+        assets.load();
+        assets.manager.finishLoading();
+        assetsFinished = true;
+        init();
         Gdx.input.setInputProcessor(stage);
     }
+
+    protected abstract void init();
 
     private void createCamera() {
         camera = new OrthographicCamera();

@@ -21,10 +21,9 @@ public class Playscreen extends AbstractScreen {
 
     public Playscreen(Groomio game){
         super(game);
-        init();
     }
 
-    private void init() {
+    protected void init() {
         //TODO
         logo = new Texture("logo.png");
     }
