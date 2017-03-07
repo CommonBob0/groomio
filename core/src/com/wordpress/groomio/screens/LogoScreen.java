@@ -12,7 +12,7 @@ public class LogoScreen extends AbstractScreen {
     private Texture logo;
 
     public LogoScreen(final Groomio game){
-        super(game);;
+        super(game);
 
         Timer.schedule(new Timer.Task() {
 

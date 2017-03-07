@@ -9,9 +9,10 @@ import com.badlogic.gdx.math.Rectangle;
 
 public class GameObject extends Rectangle {
 
-    private Texture texture;
+    protected Texture texture;
 
     public GameObject(Texture texture){
+
         this.texture = texture;
     }
 
