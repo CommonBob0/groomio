@@ -9,6 +9,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.utils.viewport.StretchViewport;
 import com.badlogic.gdx.utils.viewport.FitViewport;
+import com.badlogic.gdx.utils.viewport.Viewport;
 import com.wordpress.groomio.Groomio;
 import com.wordpress.groomio.assets.Assets;
 
@@ -26,11 +27,13 @@ public abstract class AbstractScreen implements Screen {
     protected SpriteBatch batch;
     protected Assets assets;
     protected boolean assetsFinished = false;
+    protected Viewport viewport;
 
     public AbstractScreen(Groomio game){
         this.game = game;
         createCamera();
-        stage = new Stage(new StretchViewport(Groomio.WIDTH, Groomio.HEIGHT, camera));
+        viewport = new StretchViewport(Groomio.WIDTH, Groomio.HEIGHT, camera);
+        stage = new Stage(viewport);
         batch = new SpriteBatch();
         assets = new Assets();
         assets.load();
@@ -85,7 +88,7 @@ public abstract class AbstractScreen implements Screen {
 
     @Override
     public void resize(int width, int height) {
-       //gamePort.update(width, height);
+       viewport.update(width, height);
     }
 
 

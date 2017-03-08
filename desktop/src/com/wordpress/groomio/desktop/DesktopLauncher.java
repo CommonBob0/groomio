@@ -9,7 +9,7 @@ public class DesktopLauncher {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 		config.width = Groomio.WIDTH;
 		config.height = Groomio.HEIGHT;
-		config.resizable = false;
+		config.resizable = true;
 		new LwjglApplication(new Groomio(), config);
 	}
 }
