@@ -91,6 +91,4 @@ public abstract class AbstractScreen implements Screen {
        viewport.update(width, height);
     }
 
-
-
 }

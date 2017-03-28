@@ -11,7 +11,7 @@ public class Entity extends Image {
     private final static int WIDTH = 100;
     private final static int HEIGHT = 200;
 
-    private final static int POS_X = 500;
+    private final static int POS_X = 300;
     private final static int POS_Y = 300;
 
     public Entity(){

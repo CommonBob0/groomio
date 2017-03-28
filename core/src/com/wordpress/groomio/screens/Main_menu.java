@@ -43,7 +43,7 @@ public class Main_menu extends AbstractScreen {
     protected void init(){
 
         background = assets.manager.get("menu_background.png", Texture.class);
-       // initEntity();
+        initEntity();
         initPlayButton();
         initExitButton();
 
@@ -55,13 +55,14 @@ public class Main_menu extends AbstractScreen {
         //stage.addActor(entity);
     }
 
+    // Inicjowanie buttonow w menu
     private void initPlayButton(){
         //button = assets.manager.get("button2.png", Texture.class);
-        menu_skin = new Skin(Gdx.files.internal("pix/pixthulhu-ui.json"));
+        menu_skin = new Skin(Gdx.files.internal("pix/pixthulhu-ui.json")); // TODO zmiana skina
         playButton = new TextButton("Play", menu_skin);
 
         playButton.setPosition(Groomio.WIDTH/2 - playButton.getWidth()/2,
-                               Groomio.HEIGHT - playButton.getHeight()*2);
+                               Groomio.HEIGHT/2 + playButton.getHeight()/2);
 
         stage.addActor(playButton);
         playButton.addListener(new ClickListener(){
@@ -77,7 +78,7 @@ public class Main_menu extends AbstractScreen {
         exitButton = new TextButton("Exit", menu_skin);
 
         exitButton.setPosition(Groomio.WIDTH/2 - playButton.getWidth()/2,
-                Groomio.HEIGHT - playButton.getHeight()*3);
+                Groomio.HEIGHT/2 - playButton.getHeight()/2);
 
         stage.addActor(exitButton);
         exitButton.addListener(new ClickListener(){

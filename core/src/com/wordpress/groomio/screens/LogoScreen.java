@@ -21,7 +21,7 @@ public class LogoScreen extends AbstractScreen {
               if(assetsFinished)
                 game.setScreen(new Main_menu(game));
             }
-        }, 2);
+        }, 1);
 
 
     }

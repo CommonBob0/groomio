@@ -15,6 +15,7 @@ public class Assets implements Disposable {
     public void load(){
         manager.load("button2.png", Texture.class);
         manager.load("menu_background.png", Texture.class);
+        manager.load("realWarrior.png", Texture.class);
     }
 
     @Override
