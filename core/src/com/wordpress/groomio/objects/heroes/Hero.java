@@ -28,6 +28,8 @@ abstract class Hero extends Image {
     int magic = 0;
     int intelligence = 0;
     int strength = 0;
+
+    // TODO dodac wiecej imion
     String[] names = new String[]{"Bob", "Hans", "Zbigniew", "Theo" };
 
     public Hero(Texture texture){

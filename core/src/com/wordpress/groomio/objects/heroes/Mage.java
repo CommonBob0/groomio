@@ -15,7 +15,6 @@ public class Mage extends Hero {
             this.texture = texture;
             name = randomName();
 
-            //setOrigin(texture.getWidth()/2, texture.getHeight()/2);
             setSize(WIDTH,HEIGHT);
 
             setStats();
